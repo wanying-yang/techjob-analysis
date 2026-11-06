@@ -1,0 +1,7 @@
+pandas==3.1.1
+numpy==2.5.4
+scipy==1.18.1
+scikit-learn==1.9.1
+statsmodels==0.15.0
+us==4.0.0
+geonamescache==3.0.2
