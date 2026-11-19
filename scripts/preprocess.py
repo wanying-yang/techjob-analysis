@@ -216,7 +216,13 @@ def cluster_skills(
     return clusters
 
 
-def write_clusters(clusters: dict[int, list[str]], output_path: str | Path) -> None:
+def load_handpicked_skills(path: str | Path) -> list[str]:
+    """read a newline-separated skill list, e.g. the hand-picked ai_skills.txt"""
+    with open(path) as f:
+        return [line.strip() for line in f if line.strip()]
+
+
+def write_clusters(clusters: dict[int | str, list[str]], output_path: str | Path) -> None:
     """write categories out to a file for manual inspection"""
     with open(output_path, "w") as f:
         for category, skills in clusters.items():
@@ -226,7 +232,7 @@ def write_clusters(clusters: dict[int, list[str]], output_path: str | Path) -> N
             f.write("\n")
 
 
-def add_cluster_dummies(df: pd.DataFrame, clusters: dict[int, list[str]]) -> pd.DataFrame:
+def add_cluster_dummies(df: pd.DataFrame, clusters: dict[int | str, list[str]]) -> pd.DataFrame:
     """add one skill_category_<i> dummy per cluster, plus skills_listed"""
     df = df.copy()
     for category, skills in clusters.items():
@@ -263,11 +269,12 @@ def main() -> None:
 
     top_skills = get_top_skills(df, TOP_N_SKILLS)
     matrix = build_skill_matrix(df, top_skills)
-    clusters = cluster_skills(matrix, top_skills, N_CATEGORIES)
+    clusters: dict[int | str, list[str]] = cluster_skills(matrix, top_skills, N_CATEGORIES)
+    clusters["ai_handpicked"] = load_handpicked_skills(DATA_DIR / "ai_skills.txt")
     write_clusters(clusters, output_path)
 
     df = add_cluster_dummies(df, clusters)
-    skill_cols = [f"skill_category_{i}" for i in range(N_CATEGORIES)]
+    skill_cols = [f"skill_category_{i}" for i in range(N_CATEGORIES)] + ["skill_category_ai_handpicked"]
     quick_checks(df, skill_cols)
 
 
