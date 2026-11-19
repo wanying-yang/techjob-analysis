@@ -244,6 +244,11 @@ def add_cluster_dummies(df: pd.DataFrame, clusters: dict[int | str, list[str]]) 
     return df
 
 
+def save_preprocessed(df: pd.DataFrame, output_path: str | Path) -> None:
+    """write the fully preprocessed dataframe (with skill-category dummies) to csv"""
+    df.to_csv(output_path, index=False)
+
+
 def quick_checks(df: pd.DataFrame, skill_cols: list[str]) -> None:
     """print category share and median salary with/without each category"""
     print("Share of jobs (that list skills) in each category:")
@@ -274,6 +279,8 @@ def main() -> None:
     write_clusters(clusters, output_path)
 
     df = add_cluster_dummies(df, clusters)
+    save_preprocessed(df, DATA_DIR / "preprocessed_jobs.csv")
+
     skill_cols = [f"skill_category_{i}" for i in range(N_CATEGORIES)] + ["skill_category_ai_handpicked"]
     quick_checks(df, skill_cols)
 

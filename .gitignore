@@ -2,3 +2,4 @@ venv/
 __pycache__/
 *.pyc
 data/freehire_tech.csv
+data/preprocessed_jobs.csv
