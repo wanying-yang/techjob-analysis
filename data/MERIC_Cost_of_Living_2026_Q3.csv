@@ -1,0 +1,53 @@
+state,state_code,year,quarter,rank,col_index,grocery_index,housing_index,utilities_index,transportation_index,health_index,misc_index,source_url
+Oklahoma,OK,2026,3,1,83.8,94.5,66.8,97.5,86.3,95.8,88.2,https://meric.mo.gov/data/cost-living-data-series
+Mississippi,MS,2026,3,2,86.6,94.0,71.3,94.9,90.2,86.7,93.6,https://meric.mo.gov/data/cost-living-data-series
+Alabama,AL,2026,3,3,86.9,96.4,69.7,95.9,89.7,87.5,94.7,https://meric.mo.gov/data/cost-living-data-series
+West Virginia,WV,2026,3,4,87.9,96.4,70.7,92.2,99.2,89.6,94.9,https://meric.mo.gov/data/cost-living-data-series
+Kansas,KS,2026,3,5,88.8,95.2,77.1,97.5,91.9,93.3,92.5,https://meric.mo.gov/data/cost-living-data-series
+Missouri,MO,2026,3,5,88.8,95.7,78.9,93.7,87.3,95.2,92.7,https://meric.mo.gov/data/cost-living-data-series
+Iowa,IA,2026,3,6,89.1,96.7,76.1,88.2,96.3,95.5,94.6,https://meric.mo.gov/data/cost-living-data-series
+Arkansas,AR,2026,3,6,89.1,93.8,77.7,97.1,90.8,85.9,95.2,https://meric.mo.gov/data/cost-living-data-series
+Tennessee,TN,2026,3,7,90.0,96.6,81.7,87.2,89.8,89.2,95.1,https://meric.mo.gov/data/cost-living-data-series
+Indiana,IN,2026,3,8,90.6,98.2,78.6,94.8,97.1,94.7,94.4,https://meric.mo.gov/data/cost-living-data-series
+Nebraska,NE,2026,3,9,90.9,98.9,77.8,89.6,89.3,104.5,97.6,https://meric.mo.gov/data/cost-living-data-series
+Georgia,GA,2026,3,10,91.0,97.4,78.2,97.9,93.3,99.1,95.8,https://meric.mo.gov/data/cost-living-data-series
+North Dakota,ND,2026,3,11,91.0,94.6,78.3,84.0,96.2,107.0,98.6,https://meric.mo.gov/data/cost-living-data-series
+New Mexico,NM,2026,3,12,91.1,96.1,84.1,80.9,93.4,101.3,95.4,https://meric.mo.gov/data/cost-living-data-series
+Texas,TX,2026,3,12,91.1,95.7,78.0,101.0,93.8,98.1,96.5,https://meric.mo.gov/data/cost-living-data-series
+Louisiana,LA,2026,3,13,91.8,95.5,82.9,84.3,95.4,93.9,98.6,https://meric.mo.gov/data/cost-living-data-series
+South Dakota,SD,2026,3,14,91.9,97.5,85.6,84.0,96.4,104.2,93.9,https://meric.mo.gov/data/cost-living-data-series
+Ohio,OH,2026,3,15,92.3,98.2,83.7,99.8,93.8,92.5,95.0,https://meric.mo.gov/data/cost-living-data-series
+Michigan,MI,2026,3,16,92.5,99.0,83.5,97.6,99.0,88.3,95.0,https://meric.mo.gov/data/cost-living-data-series
+South Carolina,SC,2026,3,17,92.6,99.3,80.1,95.9,95.8,97.6,98.1,https://meric.mo.gov/data/cost-living-data-series
+Kentucky,KY,2026,3,18,93.0,100.8,79.0,87.5,95.4,93.3,102.5,https://meric.mo.gov/data/cost-living-data-series
+Wyoming,WY,2026,3,19,93.3,99.7,84.9,94.8,91.3,99.8,97.1,https://meric.mo.gov/data/cost-living-data-series
+Minnesota,MN,2026,3,20,93.8,99.8,80.1,95.5,95.2,111.1,99.8,https://meric.mo.gov/data/cost-living-data-series
+Illinois,IL,2026,3,21,95.2,99.5,84.4,100.4,101.9,103.9,98.5,https://meric.mo.gov/data/cost-living-data-series
+North Carolina,NC,2026,3,22,96.6,101.2,89.9,96.7,93.2,106.1,99.8,https://meric.mo.gov/data/cost-living-data-series
+Pennsylvania,PA,2026,3,23,97.0,99.2,88.2,109.2,101.4,96.5,99.7,https://meric.mo.gov/data/cost-living-data-series
+Wisconsin,WI,2026,3,24,97.8,99.7,96.5,93.9,95.4,102.2,99.0,https://meric.mo.gov/data/cost-living-data-series
+Idaho,ID,2026,3,25,98.0,97.8,99.6,72.0,107.7,103.1,100.0,https://meric.mo.gov/data/cost-living-data-series
+Virginia,VA,2026,3,26,99.4,100.1,99.2,99.2,98.4,97.9,99.8,https://meric.mo.gov/data/cost-living-data-series
+Utah,UT,2026,3,27,100.2,98.1,107.8,88.2,102.3,89.9,98.4,https://meric.mo.gov/data/cost-living-data-series
+Puerto Rico,PR,2026,3,28,100.7,107.9,96.9,162.3,92.2,68.7,92.2,https://meric.mo.gov/data/cost-living-data-series
+Delaware,DE,2026,3,29,101.6,103.1,100.7,99.6,98.4,102.2,102.8,https://meric.mo.gov/data/cost-living-data-series
+Florida,FL,2026,3,29,101.6,105.2,103.8,96.0,98.7,100.7,100.3,https://meric.mo.gov/data/cost-living-data-series
+Nevada,NV,2026,3,30,102.3,103.3,111.8,81.2,114.0,101.4,95.8,https://meric.mo.gov/data/cost-living-data-series
+Colorado,CO,2026,3,31,102.6,101.0,108.0,87.1,96.3,103.4,103.9,https://meric.mo.gov/data/cost-living-data-series
+Arizona,AZ,2026,3,32,107.8,100.2,119.9,100.9,103.7,97.4,105.0,https://meric.mo.gov/data/cost-living-data-series
+New Hampshire,NH,2026,3,33,109.6,99.9,116.0,116.1,103.3,105.1,108.8,https://meric.mo.gov/data/cost-living-data-series
+Montana,MT,2026,3,33,109.6,102.1,124.7,82.3,104.3,106.9,108.3,https://meric.mo.gov/data/cost-living-data-series
+Oregon,OR,2026,3,34,110.8,105.1,120.0,96.9,118.3,114.9,106.1,https://meric.mo.gov/data/cost-living-data-series
+Rhode Island,RI,2026,3,35,112.3,104.0,119.0,123.6,100.0,103.3,111.7,https://meric.mo.gov/data/cost-living-data-series
+Washington,WA,2026,3,36,113.3,106.1,120.2,98.9,129.0,110.5,110.5,https://meric.mo.gov/data/cost-living-data-series
+Maine,ME,2026,3,37,114.0,101.7,133.3,122.8,100.8,114.9,103.5,https://meric.mo.gov/data/cost-living-data-series
+Connecticut,CT,2026,3,38,114.1,105.9,124.8,123.0,103.9,109.6,109.4,https://meric.mo.gov/data/cost-living-data-series
+Vermont,VT,2026,3,39,114.2,102.4,129.6,112.6,103.5,108.9,109.9,https://meric.mo.gov/data/cost-living-data-series
+New Jersey,NJ,2026,3,40,116.4,106.7,140.4,105.2,101.7,115.8,106.3,https://meric.mo.gov/data/cost-living-data-series
+Maryland,MD,2026,3,41,119.9,108.5,146.7,114.4,104.1,106.0,109.0,https://meric.mo.gov/data/cost-living-data-series
+Alaska,AK,2026,3,42,127.1,124.9,128.8,150.7,114.9,132.0,123.0,https://meric.mo.gov/data/cost-living-data-series
+New York,NY,2026,3,43,127.2,102.0,178.5,105.5,107.3,109.5,106.4,https://meric.mo.gov/data/cost-living-data-series
+District of Columbia,DC,2026,3,44,135.3,108.1,193.6,108.5,105.8,119.2,112.8,https://meric.mo.gov/data/cost-living-data-series
+California,CA,2026,3,45,137.9,109.4,183.6,139.1,136.8,109.2,114.6,https://meric.mo.gov/data/cost-living-data-series
+Massachusetts,MA,2026,3,46,148.6,105.1,215.6,156.0,107.4,129.1,120.8,https://meric.mo.gov/data/cost-living-data-series
+Hawaii,HI,2026,3,47,186.0,134.3,307.1,196.4,137.4,110.9,123.3,https://meric.mo.gov/data/cost-living-data-series
