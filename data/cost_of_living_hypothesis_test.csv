@@ -1,0 +1,2 @@
+feature,n_postings,coefficient,p_value,significant,ci_95_low,ci_95_high
+col_index,44230,441.13763833363464,0.0004997501249375312,True,421.1188297326451,461.0097730100813
