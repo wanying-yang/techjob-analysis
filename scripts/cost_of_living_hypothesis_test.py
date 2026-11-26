@@ -1,7 +1,3 @@
-"""Freedman-Lane permutation test: does the state cost-of-living index
-(MERIC col_index) affect salary, controlling for experience, job category,
-seniority, work mode, employment type, company size, and skill-category
-requirements? Reads data/cleaned_job_postings.csv."""
 from pathlib import Path
 
 import numpy as np
@@ -10,10 +6,8 @@ import pandas as pd
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 N_PERMUTATIONS = 2000
-# each bootstrap resample changes which rows are in the design matrix, so unlike the permutation
-# test above it can't reuse one precomputed pseudoinverse -- kept smaller to keep runtime reasonable
 N_BOOTSTRAP = 500
-ALPHA = 0.05  # single test, not a multiple-testing family like the skill categories
+ALPHA = 0.05
 RANDOM_STATE = 0
 
 TARGET = "salary_mid_year"
@@ -28,16 +22,13 @@ def load_cleaned(path: str | Path) -> pd.DataFrame:
     """read the cleaned, col_index-merged postings"""
     return pd.read_csv(path)
 
-
 def restrict_to_known_col_index(df: pd.DataFrame) -> pd.DataFrame:
     """keep postings with a matched MERIC cost-of-living index"""
     return df.dropna(subset=[COL_FEATURE]).copy()
 
-
 def get_binary_controls(df: pd.DataFrame) -> list[str]:
     """find the skill_category_* dummy columns, plus skills_listed"""
     return [c for c in df.columns if c.startswith(BINARY_PREFIX)] + BINARY_EXTRA
-
 
 def build_design_matrix(df: pd.DataFrame, numeric_medians: pd.Series) -> tuple[np.ndarray, list[str]]:
     """one-hot encode controls plus col_index into a single design matrix with an intercept column"""
@@ -51,11 +42,9 @@ def build_design_matrix(df: pd.DataFrame, numeric_medians: pd.Series) -> tuple[n
     design_matrix = np.column_stack([np.ones(len(design)), design.to_numpy(dtype=float)])
     return design_matrix, list(design.columns)
 
-
 def fit_ols(design_matrix: np.ndarray, outcome: np.ndarray) -> np.ndarray:
     """ordinary least squares via lstsq, returns coefficients (intercept first)"""
     return np.linalg.lstsq(design_matrix, outcome, rcond=None)[0]
-
 
 def freedman_lane_test(
     full_matrix: np.ndarray,
@@ -64,11 +53,7 @@ def freedman_lane_test(
     n_permutations: int,
     rng: np.random.Generator,
 ) -> tuple[float, float]:
-    """freedman-lane permutation test for the coefficient at col_position, controlling for every other column.
-
-    the design matrix never changes across permutations (only the target does), so this precomputes
-    each matrix's pseudoinverse once and reuses it -- turning every permutation into a matrix-vector
-    product instead of a fresh least-squares solve.
+    """freedman-lane permutation test for the coefficient at col_position, controlling for every other column (from slides)
     """
     reduced_matrix = np.delete(full_matrix, col_position, axis=1)
     reduced_pinv = np.linalg.pinv(reduced_matrix)
@@ -86,7 +71,6 @@ def freedman_lane_test(
     p_value = (np.sum(np.abs(permuted) >= abs(observed)) + 1) / (n_permutations + 1)
     return observed, p_value
 
-
 def bootstrap_confidence_interval(
     full_matrix: np.ndarray,
     outcome: np.ndarray,
@@ -102,11 +86,9 @@ def bootstrap_confidence_interval(
         coefficients[i] = fit_ols(full_matrix[rows], outcome[rows])[col_position]
     return np.percentile(coefficients, 2.5), np.percentile(coefficients, 97.5)
 
-
 def write_results(results: pd.DataFrame, output_path: str | Path) -> None:
     """write the hypothesis test results table to csv"""
     results.to_csv(output_path, index=False)
-
 
 def main() -> None:
     """load the cleaned data, run the freedman-lane test and a bootstrap CI for col_index, and write results"""
@@ -138,7 +120,6 @@ def main() -> None:
     write_results(results, output_path)
     print(f"Postings used (known col_index): {len(df_test)} of {len(df)}")
     print(results.to_string(index=False))
-
 
 if __name__ == "__main__":
     main()
